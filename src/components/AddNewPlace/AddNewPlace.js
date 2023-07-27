@@ -1,6 +1,6 @@
-import UserForm from './UserForm'
-const AddNewPlace = (props) => {
+import UserForm from './UserForm';
 
+const AddNewPlace = () => {
     return (
         <div className='container'>
             <h3 className='text-center'>Add new Tourist Place</h3>

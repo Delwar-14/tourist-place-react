@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Form, Row, Col, } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import AddNewPlaceStyle from './AddNewPlaceStyle.css'
-import { Link, useHistory } from 'react-router-dom'
-import { setInputFormData, updateRowData } from '../../services/actions/actions'
+import { Link, useHistory } from 'react-router-dom';
+
+import AddNewPlaceStyle from './AddNewPlaceStyle.css';
+import { setInputFormData, updateRowData } from '../../services/actions/actions';
 import { userSchema } from '../../Validation/Validation';
 
 const AddNewPlace = (props) => {
@@ -110,7 +111,6 @@ const AddNewPlace = (props) => {
     }
 
     return (
-
         <Form style={AddNewPlaceStyle} onSubmit={handleSubmit} >
             <Form.Group as={Row} className='input-form' controlId='name'>
                 <Form.Label column sm={2}>Name:</Form.Label>

@@ -6,5 +6,4 @@ export const userSchema = object({
     rating: number().required().min(1).max(5),
     type: string().required('Type is required'),
     image: string().required('Image is required'),
-    
 });

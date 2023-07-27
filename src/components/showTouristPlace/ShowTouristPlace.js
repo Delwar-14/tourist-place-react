@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import TouristPlaceHeading from './HeaderPart/TouristPlaceHeading';
-import PlaceDataShow from './PlaceDataShow/PlaceDataShow';
 import { Form, Row, Col, } from 'react-bootstrap';
 import { Link } from 'react-router-dom'
+
+import TouristPlaceHeading from './HeaderPart/TouristPlaceHeading';
+import PlaceDataShow from './PlaceDataShow/PlaceDataShow';
 import NotFoundData from './NotFoundData/NotFoundData';
 import PleaseInsert from './PleaseInsert/PleaseInsert';
 import { searchFilter } from '../../services/actions/actions';
-import './table.css'
+import './table.css';
+
 const ShowTouristPlace = () => {
     const dispatch = useDispatch();
     let result = [];
@@ -16,10 +18,9 @@ const ShowTouristPlace = () => {
     const touristPlaces = useSelector(state => state.placeReducers.formData);
     const order = useSelector(state => state.placeReducers.order);
     const searchInputValues = useSelector(state => state.placeReducers.inputs);
-    const [searchInput, setSearchInput] = useState({ name: searchInputValues })
+    const [searchInput, setSearchInput] = useState({ name: searchInputValues });
     const [listTouristPlaces, setListTouristPlaces] = useState([]);
     let inputValue;
-
 
     function getAscSort(data) {
         data.sort((a, b) => {
@@ -37,7 +38,8 @@ const ShowTouristPlace = () => {
             name: event.target.value,
         });
     }
-    dispatch(searchFilter(searchInput))
+
+    dispatch(searchFilter(searchInput));
 
     if (searchInputValues) {
         let res = [];
@@ -58,18 +60,20 @@ const ShowTouristPlace = () => {
             setListTouristPlaces(ascOrderTemp);
         }
         else if (order === 'NORMAL')
-            setListTouristPlaces([...temp])
+            setListTouristPlaces([...temp]);
     }
 
     useEffect(() => {
         let temp;
         let ascOrderTemp;
+
         if (inputValue)
-            temp = [...result]
+            temp = [...result];
         else
-            temp = ([...touristPlaces])
-        ascOrderTemp = [...temp]
-        getAscSort(ascOrderTemp)
+            temp = ([...touristPlaces]);
+
+        ascOrderTemp = [...temp];
+        getAscSort(ascOrderTemp);
         getTouristPlaceList(ascOrderTemp, temp);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [order, touristPlaces, inputValue])

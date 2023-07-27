@@ -1,4 +1,5 @@
 import { SET_FORM_DATA, SEARCH_FILTER, UPDATE_ROW_DATA, DELETE_ROW_DATA, FILTER } from "../actions/actions";
+
 const initialState = {
   formData: [],
   inputs: '',

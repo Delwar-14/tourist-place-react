@@ -1,10 +1,12 @@
+import { Provider } from "react-redux";
+
 import UpdatePlace from './components/AddNewPlace/UpdatePlace';
 import ShowTouristPlace from './components/showTouristPlace/ShowTouristPlace';
 import AddNewPlace from './components/AddNewPlace/AddNewPlace';
 import NotFound from './components/notFound/NotFound';
 import './App.css';
-import { Provider } from "react-redux";
 import store from './store';
+
 import {
   BrowserRouter as Router,
   Switch,

@@ -1,11 +1,13 @@
 import React from 'react';
-import HeaderPart from './HeaderPart.css'
 import { useDispatch, useSelector } from 'react-redux';
+
+import HeaderPart from './HeaderPart.css';
 import { orderFilter } from '../../../services/actions/actions';
 
-const TouristPlaceHeading = (props) => {
+const TouristPlaceHeading = () => {
     const dispatch = useDispatch();
     const order = useSelector(state => state.placeReducers.order);
+
     return (
         <div style={HeaderPart} className='root'>
             <div className='table-heading'>Name</div>

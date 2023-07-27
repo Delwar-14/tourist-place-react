@@ -3,10 +3,10 @@ export const DELETE_ROW_DATA = 'DELETE_ROW_DATA';
 export const UPDATE_ROW_DATA = 'UPDATE_ROW_DATA';
 export const SET_CURRENT_ROW_DATA = 'SET_UPDATE_ROW_DATA';
 export const SEARCH_FILTER = 'SEARCH_FILTER';
-export const FILTER = 'FILTER'
-export const ASC = 'ASC'
-export const DESC = 'DESC'
-export const NORMAL = 'NORMAL'
+export const FILTER = 'FILTER';
+export const ASC = 'ASC';
+export const DESC = 'DESC';
+export const NORMAL = 'NORMAL';
 
 //set input form data
 export function setInputFormData(data) {
@@ -45,11 +45,11 @@ export const updateRowData = (update) => {
 export const orderFilter = (order) => {
     let nextOrder = order.order;
     if (nextOrder === NORMAL)
-    nextOrder = ASC;
+        nextOrder = ASC;
     else if (nextOrder === ASC)
-    nextOrder = DESC;
+        nextOrder = DESC;
     else
-    nextOrder = NORMAL;
+        nextOrder = NORMAL;
 
     return {
         type: FILTER,
