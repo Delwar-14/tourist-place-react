@@ -1,0 +1,26 @@
+.root{
+    display: flex;
+}
+
+.table-heading {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    color: #ffffff;
+    background-color: #000000;
+    justify-content: space-around;
+    border: 1px solid #ffffff;
+}
+
+.sort-btn{
+    background-color: #000000;
+    border: none;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 700px) {
+    .root {
+        width: 650px;
+    }
+}

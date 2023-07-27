@@ -1,0 +1,24 @@
+.list-row{
+    display: flex;
+}
+
+.btn-div{
+    text-align: right;
+
+}
+.btn{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 13px;
+}
+.input-form{
+    margin-top: 10px;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.error{
+    color: #FF0000;
+}
