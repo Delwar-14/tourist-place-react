@@ -4,9 +4,9 @@ export const UPDATE_ROW_DATA = 'UPDATE_ROW_DATA';
 export const SET_CURRENT_ROW_DATA = 'SET_UPDATE_ROW_DATA';
 export const SEARCH_FILTER = 'SEARCH_FILTER';
 export const FILTER = 'FILTER';
-export const ASC = 'ASC';
-export const DESC = 'DESC';
-export const NORMAL = 'NORMAL';
+export const ASC = 'asc';
+export const DESC = 'desc';
+export const NORMAL = '';
 
 //set input form data
 export function setInputFormData(data) {

@@ -1,9 +1,15 @@
-import { SET_FORM_DATA, SEARCH_FILTER, UPDATE_ROW_DATA, DELETE_ROW_DATA, FILTER } from "../actions/actions";
+import {
+  SET_FORM_DATA,
+  SEARCH_FILTER,
+  UPDATE_ROW_DATA,
+  DELETE_ROW_DATA,
+  FILTER,
+} from '../actions/actions';
 
 const initialState = {
   formData: [],
   inputs: '',
-  order: 'NORMAL',
+  order: '',
 };
 
 const placesReducer = (state = initialState, action) => {
@@ -20,42 +26,40 @@ const placesReducer = (state = initialState, action) => {
             image,
             rating,
             type,
-            id: id
-          }
+            id: id,
+          },
         ],
       };
 
     case DELETE_ROW_DATA:
-      const newState = state.formData.filter((place) => place.id !== action.id.id);
+      const newState = state.formData.filter(
+        (place) => place.id !== action.id.id
+      );
       return {
         ...state,
-        formData: [
-          ...newState,
-        ],
+        formData: [...newState],
       };
 
     case UPDATE_ROW_DATA:
       const update = action.payload;
-      const idx = state.formData.findIndex(obj => obj.id === update.data.id);
+      const idx = state.formData.findIndex((obj) => obj.id === update.data.id);
       state.formData[idx] = update.data;
       return {
         ...state,
-        formData: [
-          ...state.formData,
-        ],
+        formData: [...state.formData],
       };
 
     case FILTER:
       return {
         ...state,
-        order: action.payload.data
-      }
+        order: action.payload.data,
+      };
 
     case SEARCH_FILTER:
       return {
         ...state,
-        inputs: action.payload.data
-      }
+        inputs: action.payload.data,
+      };
 
     default:
       return state;
