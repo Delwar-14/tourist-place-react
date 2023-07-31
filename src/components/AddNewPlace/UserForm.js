@@ -201,10 +201,10 @@ const AddNewPlace = (props) => {
             onChange={handleTypeChange}
             required
           >
-            <option value="beach">Beach</option>
-            <option value="hills">Hills</option>
-            <option value="landmark">Landmark</option>
-            <option value="fountain">Fountain</option>
+            <option value="1">Beach</option>
+            <option value="2">Hills</option>
+            <option value="3">Landmark</option>
+            <option value="4">Fountain</option>
           </Form.Control>
           {errors.type && <p className="error">{errors.type}</p>}
         </Col>
